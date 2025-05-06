@@ -1,0 +1,82 @@
+<div class="container">
+
+    <h2>Gestión de Mascotas</h2>
+  
+    <div class="filters">
+      <label>Buscar mascota:
+        <input
+          type="text"
+          [(ngModel)]="searchQuery"
+          (input)="applySearchFilter()"
+          placeholder="Buscar por nombre, tipo o raza"
+        />
+      </label>
+    </div>
+  
+    <button (click)="toggleForm()" style="margin: 10px 0;">
+      {{ showForm ? 'Ocultar Formulario' : 'Mostrar Formulario' }}
+    </button>
+  
+    <hr />
+  
+    <div class="form" *ngIf="showForm">
+      <h3>{{ editingPet ? 'Editar Mascota' : 'Nueva Mascota' }}</h3>
+  
+      <label>Nombre: <span class="required">*</span>
+        <input type="text" [(ngModel)]="newPet.name" />
+        <div *ngIf="submitted && !newPet.name" class="error">Este campo es obligatorio.</div>
+      </label>
+  
+      <label>Tipo: <span class="required">*</span>
+        <input type="text" [(ngModel)]="newPet.type" />
+        <div *ngIf="submitted && !newPet.type" class="error">Este campo es obligatorio.</div>
+      </label>
+  
+      <label>Raza: <span class="required">*</span>
+        <input type="text" [(ngModel)]="newPet.breed" />
+        <div *ngIf="submitted && !newPet.breed" class="error">Este campo es obligatorio.</div>
+      </label>
+  
+      <label>Edad:
+        <input type="number" [(ngModel)]="newPet.age" />
+      </label>
+  
+      <button (click)="savePet()">
+        {{ editingPet ? 'Actualizar' : 'Agregar' }}
+      </button>
+  
+      <button *ngIf="editingPet" (click)="cancelEdit()">Cancelar</button>
+    </div>
+  
+    <hr />
+  
+    <div class="list">
+      <h3>Mascotas Registradas</h3>
+      <table border="1" width="100%">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Tipo</th>
+            <th>Raza</th>
+            <th>Edad</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pet of pets">
+            <td>{{ pet.id }}</td>
+            <td>{{ pet.name }}</td>
+            <td>{{ pet.type }}</td>
+            <td>{{ pet.breed }}</td>
+            <td>{{ pet.age }}</td>
+            <td class="actions">
+              <button class="edit" (click)="editPet(pet)">Editar</button>
+              <button class="delete" (click)="deletePet(pet.id!)">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
