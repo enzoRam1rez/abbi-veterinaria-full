@@ -1,11 +1,25 @@
+# Node modules (general + Angular)
 node_modules/
 abbi-veterinaria/node_modules/
+
+# Angular build and cache files
 dist/
+abbi-veterinaria/dist/
 .angular/
-.angular/cache/
+abbi-veterinaria/.angular/
+abbi-veterinaria/.angular/cache/
 tmp/
+abbi-veterinaria/tmp/
+
+# Logs
 *.log
+
+# IDEs and editors
 .vscode/
 .idea/
+*.sublime-workspace
+*.sublime-project
+
+# OS-specific files
 .DS_Store
 Thumbs.db
