@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "Firu",
+    "type": "Perro",
+    "breed": "Labrador",
+    "age": 7
+  },
+  {
+    "id": 2,
+    "name": "Amenie",
+    "type": "Gato",
+    "breed": "Persa",
+    "age": 3
+  },
+  {
+    "name": "Rocky",
+    "type": "Perro",
+    "breed": "Bulldog",
+    "age": 4,
+    "id": 3
+  },
+  {
+    "name": "Kukis",
+    "type": "Gato",
+    "breed": "Americano",
+    "age": 3,
+    "id": 4
+  },
+  {
+    "name": "Leon",
+    "type": "Gato",
+    "breed": "Esfinge",
+    "age": 2,
+    "id": 5
+  }
+]

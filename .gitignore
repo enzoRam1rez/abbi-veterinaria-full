@@ -1,0 +1,14 @@
+node_modules/
+abbi-veterinaria/node_modules/
+
+dist/
+.angular/
+.angular/cache/
+tmp/
+
+*.log
+
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
